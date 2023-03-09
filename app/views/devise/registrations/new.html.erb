@@ -1,11 +1,32 @@
 <div class="contents row">
   <div class="container">
-    <h2>Sign up</h2>
+    <h2>新規登録</h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.label :email %><br />
+        <%= f.label :ニックネーム %>
+        <span class="indispensable">必須</span><br/>
+        <%= f.text_area :nickname, placeholder:"例) Cole Men", maxlength:"10" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :氏名 %>
+        <span class="indispensable">必須</span><br/>
+        <%= f.text_area :last_name, class:"input-name", id:"last-name", placeholder:"例) 焚火" %>
+        <%= f.text_area :first_name, class:"input-name", id:"first-name", placeholder:"例) 好男" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :氏名（カナ） %>
+        <span class="indispensable">必須</span><br/>
+        <%= f.text_area :last_name_kana, class:"input-name", id:"last-name", placeholder:"例) タキビ" %>
+        <%= f.text_area :first_name_kana, class:"input-name", id:"first-name", placeholder:"例) ヨシオ" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :メールアドレス %>
+        <span class="indispensable">必須</span><br/>
         <%= f.email_field :email %>
       </div>
 
@@ -23,7 +44,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "新規登録" %>
       </div>
     <% end %>
   </div>
