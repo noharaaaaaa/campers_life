@@ -1,0 +1,44 @@
+<%= render "shared/header" %>
+<div class="user-edit">
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">修正箇所を入力</h2>
+    <%= form_with model: @user, local: true do |f| %>
+
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          イメージ画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <p>
+            ↓クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :profile_image, id:"item-image" %>
+        </div>
+      </div>
+
+      <div class="new-items">
+        <div class="weight-bold-text">
+          ニックネーム
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :nickname, class:"items-text", id:"item-name", placeholder:"新しいニックネーム", maxlength:"40" %>
+        <div class="items-explain">
+          <div class="weight-bold-text">
+            自己紹介文
+          </div>
+          <%= f.text_area :profile, class:"items-text", id:"item-info", placeholder:"自己紹介（必須 1,000文字まで）（キャンプが大好きで、毎月１回はキャンプをしています！" ,rows:"7" ,maxlength:"1000" %>
+        </div>
+        <div class="weight-bold-text">
+          変更後のメールアドレス
+        </div>
+        <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+      </div>
+
+      <div class="sell-btn-contents">
+        <%= f.submit "変更する" ,class:"sell-btn" %>
+        <%=link_to 'もどる', user_path(@user.id), class:"back-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.top {
+  height: 80px;
+  width: 100%;
+  background-color: white;
+}
+
+.top-logo {
+  width: 200px;
+  text-align: center;
+}
+
+.top-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.user_nav {
+  width: 300px;
+}

@@ -1,0 +1,49 @@
+<%= render "shared/header" %>
+
+<%# ユーザー情報 %>
+<div class="user-page">
+  <%# サイド情報 %>
+  <div class="user-side">
+    <p>プロフィール</p>
+    <div class="profile_image_size">
+      <%# if @user.profile_image.present? %>
+        <%#= image_tag @user.profile_image, size: '100x100' %>
+      <%# else %>
+        <%#= image_tag "default_image.png", size: '100x100' %>
+      <%# end %>
+    </div>
+    <div class="user-nickname">
+      <p>ニックネーム</p>
+      <%= @user.nickname %>
+    </div>
+    <div class="user-good">
+      <p>いいね</p>
+      <%#= @user. %>
+    </div>
+    <div class="user-favorite">
+      <p>お気に入り</p>
+      <%#= @user. %>
+    </div>
+  </div>
+  <%# サイド情報 %>
+  <%# メイン情報 %>
+  <div class="user-main">
+    <div class="user-mypage">
+      <p><%= @user.nickname %>さんのマイページ</p>
+      <% if current_user.id == @user.id %>
+        <p>名前<br><%= @user.last_name %>　<%= @user.first_name %></p>
+      <% end %>
+      <p>自己紹介</p><%= @user.profile %>
+    </div>
+    <div>
+      <% if current_user.id == @user.id %>
+        <%= link_to 'ユーザー情報編集', edit_user_path, class: "user-nickname" %>
+      <% end %>
+    </div>
+    <div>
+      <p>投稿一覧</p>
+    </div>
+  </div>
+<%# ユーザー投稿 %>
+
+</div>
