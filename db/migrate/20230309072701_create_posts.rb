@@ -7,7 +7,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string  :linl, null: false
       t.integer :price
       t.integer :person_id
-      t.references  :user_id, null: false
+      t.references :user, null: false
       
       t.timestamps
     end

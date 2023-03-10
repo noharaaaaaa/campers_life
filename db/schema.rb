@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(version: 2023_03_10_070229) do
     t.string "linl", null: false
     t.integer "price"
     t.integer "person_id"
-    t.bigint "user_id_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id_id"], name: "index_posts_on_user_id_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
