@@ -6,11 +6,11 @@
   <div class="user-side">
     <p>プロフィール</p>
     <div class="profile_image_size">
-      <%# if @user.profile_image.present? %>
-        <%#= image_tag @user.profile_image, size: '100x100' %>
-      <%# else %>
-        <%#= image_tag "default_image.png", size: '100x100' %>
-      <%# end %>
+      <% if @user.profile_image.present? %>
+        <%= image_tag @user.profile_image, size: '100x100' %>
+      <% else %>
+        <%= image_tag "default_image.png", size: '100x100' %>
+      <% end %>
     </div>
     <div class="user-nickname">
       <p>ニックネーム</p>
