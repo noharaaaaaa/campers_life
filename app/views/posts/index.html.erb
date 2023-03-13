@@ -1,3 +1,61 @@
 <%= render "shared/header" %>
-<h1>トップページ</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class='main'>
+  <div class='title-contents'>
+    <h3 class='service-title'>
+      キャンプ記事投稿サイト
+    </h3>
+    <p class='service-explain'>
+      CampersLifeで世界中の人と
+    </p>
+    <p class='service-explain'>
+      思い出を共有しましょう
+    </p>
+    
+  </div>
+  <div class="post-title">
+    <h3 class="post-name">投稿一覧</h3>
+  </div>
+
+  <%# 投稿一覧 %>
+  <ul class='item-lists'>
+    <% @posts.each do |post| %>
+    <div class="post-screen">
+      <div class="post-box">
+        <div class="post-contents">
+        <h3 class="item-name"><%= link_to post.title, post_path(post.id) %></h3>
+          <div class='item-img-content'>
+            <% post.images.each do |image| %>
+              <%= image_tag(image, height:200, class:"post-image-view") %>
+            <% end %>
+          </div>
+          <div class="post-user">
+            <div class="post-user-info">
+              <%= link_to image_tag(post.user.profile_image, size:'50x50'), "/users/#{post.user_id}" %>
+              <div class="post-user-name">
+                <%= post.user.nickname%>さんの投稿
+              </div>
+            </div>
+            <div class="post-info">
+              <%= link_to image_tag("comment.png", size: '25x25', class:"post-icon"), "#" %>　
+              <%#= link_to "#{post.comments.count} コメント", post_path(post.id) コメント機能実装後に解除%>
+            </div>
+          </div>
+          <div class="post-camp-info">
+            <p>　↓キャンプサイト情報↓</p>
+            <li class="list">
+            <div class='post-link'>
+              <p>　サイト名：<%= post.place %></p>
+            </div>
+            </li>
+            <li class="list">
+            <div class='post-link'>
+              <p>　リンク：<%= link_to "post.link", "#" %></p>
+            </div>
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </ul>
+</div>

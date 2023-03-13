@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2023_03_10_070229) do
     t.string "title", null: false
     t.text "article", null: false
     t.string "place", null: false
-    t.string "linl", null: false
+    t.string "link", null: false
     t.integer "price"
     t.integer "person_id"
     t.bigint "user_id", null: false
