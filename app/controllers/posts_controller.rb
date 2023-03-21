@@ -26,11 +26,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    if params[:image_id].present?
-      image = post.images&find(image_id)
-      image.purge
+    if params[:post][:image_ids]
+        params[:post][:image_ids].each do |image_id|
+        image = @post.images.find(image_id)
+        image.purge
+      end
     end
-    if @post.update(posts_params)
+    if @post.update_attributes(posts_params)
       redirect_to action: :show
     else
       render 'edit'
@@ -38,7 +40,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    redirect_to action: :index
+    if current_user.id == @post.user_id
+      @post.destroy
+      redirect_to action: :index
+    else
+      redirect_to action: :index
+    end
   end
 
   private
@@ -50,7 +57,5 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
-
-
 
 end

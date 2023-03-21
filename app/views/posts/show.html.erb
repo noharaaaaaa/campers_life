@@ -83,7 +83,7 @@
           <%= link_to "投稿内容の編集", edit_post_path, method: :get, class: "item-red-btn" %>
         </div>
         <div class="btn-position">
-          <%= link_to "削除", post_path, method: :delete, class:"item-destroy" %>
+          <%= link_to "削除", post_path, method: :delete ,data: { confirm: '削除してよろしいですか?' }, class:"item-destroy" %>
         </div>
         <div class="btn-position">
           <%= link_to 'もどる', :back , class:"back-btn" %>
