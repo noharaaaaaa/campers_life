@@ -1,0 +1,94 @@
+<%= render "shared/header" %>
+
+<%# 商品の概要 %>
+<%= form_with(model: @post, local: true) do |f| %>
+<div class="item-show">
+  <div class="item-box-show">
+
+    <div class="show-name">
+      <%= @post.title %>
+    </div>
+
+    <div class="show-img-content">
+      <% if @post.images.present? %>
+        <% @post.images.each do |image| %>
+          <%= image_tag(image, height:350, class:"post-image-view") %> <br>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="post-information">
+      <div class="article-good-box">
+        <div class="article-box">
+          <%= @post.article %>
+        </div>
+        <div class="good">
+          <%# if @post.gooded_by?(current_user) %>
+          <p>
+          <%#= link_to post_goods_path(@post), method: :delete do %>
+            <span class="goodmark">♥</span><%#= @post.goods.count %> いいね
+          <%# end %>
+          </p>
+          <%# else %>
+          <p>
+          <%#= link_to post_goods_path(@post), method: :post do %>
+            <span class="goodmark">♡</span><%#= @post.goods.count %> いいね
+          <%# end %>
+          </p>
+          <%# end %>
+        </div>
+      </div>
+
+      <div class="camp-info">
+        <p>　↓キャンプサイト情報↓</p>
+        <li class="list">
+          <div class='post-link'>
+            <p>　サイト名：<%= @post.place %></p>
+          </div>
+        </li>
+        <li class="list">
+          <div class='post-link'>
+            <p>　リンク：<%= @post.link %></p>
+          </div>
+        </li>
+        <div class="list">
+          <span class="post-link">
+            　宿泊費：<%= @post.price %>円
+          </span>
+        </div>
+
+        </div>
+    </div>
+
+
+
+
+    <%# コメント一覧 %>
+    <div class="comment">
+    <% if user_signed_in? %>
+      <%#= form_with(model: [@post, @comment]) do |form| %>
+        <%#= form.text_area :text, placeholder: "コメントする", rows: "2", class: "form-comment" %>
+        <%#= form.submit "投稿", class: "comment-submit" %>
+      <%# end %>
+    <%# else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+    </div>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      
+    </div>
+    <div class="sell-btn-contents">
+      <% if current_user.id == @post.user_id %>
+        <div class="btn-position">
+          <%= link_to "投稿内容の編集", edit_post_path, method: :get, class: "item-red-btn" %>
+        </div>
+        <div class="btn-position">
+          <%= link_to "削除", post_path, method: :delete ,data: { confirm: '削除してよろしいですか?' }, class:"item-destroy" %>
+        </div>
+        <div class="btn-position">
+          <%= link_to 'もどる', :back , class:"back-btn" %>
+        </div>
+      <% end %>
+    </div>
+</div>
+<% end %>

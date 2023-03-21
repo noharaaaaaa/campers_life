@@ -1,0 +1,69 @@
+<%= render "shared/header" %>
+
+<div class="user-edit">
+
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">投稿内容を入力</h2>
+    <%= form_with model: @post, local: true do |f| %>
+    <%# 投稿画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        投稿画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード<br>
+          ※複数選択することで、まとめて写真を投稿できます。
+        </p>
+        <%= f.file_field :images, multiple: true %>
+      </div>
+        <br>
+        <p class="caution-message">※写真の拡張子が png もしくは jpeg 以外の場合、<br>うまく表示されないことがあります。</p>
+    </div>
+
+    <%# 商品名と商品説明 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        見出し
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"見出し（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          記事の内容
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :article, class:"items-article", id:"item-info", placeholder:"記事の内容（必須 1,000文字まで）例）ふもとっぱらキャンプ場でソロキャンプしてきました！写真が綺麗に撮影できたので投稿します！" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+      <div class="weight-bold-text">
+        場所
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :place, class:"items-text", id:"item-name", placeholder:"キャンプサイト名（必須 40文字まで)", maxlength:"40" %>
+      <div class="weight-bold-text">
+        キャンプ場リンク
+      </div>
+      <%= f.text_area :link, class:"items-text", id:"item-name", placeholder:"キャンプ場リンク（https://〜)", maxlength:"100" %>
+
+      <div class="weight-bold-text">
+        予算
+        <span class="indispensable">数値のみ入力してください</span>
+      </div>
+      <%= f.text_area :price, class:"items-text", id:"item-name", placeholder:"宿泊料（円）", maxlength:"20" %>
+      <div class="weight-bold-text">
+        人数
+      </div>
+      <%= f.text_area :hoge, class:"items-text", id:"item-name", placeholder:"実施人数", maxlength:"20" %>
+    </div>
+
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "投稿する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', :back , class:"back-btn" %>
+    </div>
+
+    <% end %>
+  </div>
+</div>

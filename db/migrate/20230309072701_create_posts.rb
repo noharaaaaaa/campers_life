@@ -4,10 +4,10 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string  :title, null: false
       t.text    :article, null: false
       t.string  :place, null: false
-      t.string  :linl, null: false
+      t.string  :link, null: false
       t.integer :price
       t.integer :person_id
-      t.references  :user_id, null: false
+      t.references :user, null: false
       
       t.timestamps
     end

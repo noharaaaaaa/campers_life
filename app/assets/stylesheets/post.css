@@ -19,3 +19,176 @@
 .user_nav {
   width: 300px;
 }
+
+.item-show {
+  background-color: #f8f8f8;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.item-box {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 1200px;
+  padding: 10vh 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-image {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.main {
+  background: #e8f7db;
+  padding-bottom: 20px;
+}
+
+/* 画面上部の「人生を変えるフリマアプリ」帯部分 */
+.title-contents {
+  height: 400px;
+  width: 100vw;
+  background-image: image-url('toppg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5vh 5vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.post-title {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.post-name {
+  font-size: 30px;
+}
+
+.item-contents {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+.post-box {
+  margin: 10px 10px;
+  padding: 10px;
+  background-color: #FFF;
+  overflow-y: scroll;
+  width: 500px;
+  height: 450px;
+}
+
+.item-box-show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.show-img-content {
+  position: relative;
+  display: flex;
+  height: 370px;
+  width: 70%;
+  overflow-y: scroll;
+  margin-bottom: 30px;
+}
+
+.item-img-content {
+  position: relative;
+  display: flex;
+  height: 220px;
+  overflow-x: scroll;
+}
+
+.post-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.post-image-view {
+  margin-left: 10px;
+}
+
+.item-box-image {
+  
+}
+
+.item-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.post-information {
+  display: flex;
+  justify-content: center;
+
+}
+
+.show-name {
+  font-size: 20px;
+  margin: 10px;
+  background: linear-gradient(transparent 75%, #faf8d1 75%);
+}
+
+.article-good-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35vw;
+  background: #e3fae4;
+  box-shadow: 0px 0px 0px 5px #e5fbdf;
+  border: dashed 2px #dffbe1;
+  border-radius: 8px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.article-box {
+
+}
+
+.camp-info {
+  margin-left: 10px;
+  background: #d6ebff;
+  box-shadow: 0px 0px 0px 5px #d6ebff;
+  border: dashed 2px white;
+  padding: 10px;
+}
+
+.form-comment {
+  margin: 10px;
+  width: 60%;
+}
+
+.edit-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  border: solid gainsboro 1px;
+  padding: 5px;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.edit-checkbox {
+  width: 30px;
+}
