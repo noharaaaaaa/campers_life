@@ -177,3 +177,18 @@
   margin: 10px;
   width: 60%;
 }
+
+.edit-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  border: solid gainsboro 1px;
+  padding: 5px;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.edit-checkbox {
+  width: 30px;
+}

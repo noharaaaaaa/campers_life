@@ -22,8 +22,14 @@
       <% if @post.images.present? %>
       <p>現在登録されている画像（削除する場合はチェックしてください）</p>
         <% @post.images.each do |image| %>
-          <%= f.check_box :image_ids, {multiple: true}, image.id, false %>
-          <%= image_tag(image, width:150) %> <br>
+          <div class="edit-image">
+            <div class="edit-checkbox">
+              <%= f.check_box :image_ids, {multiple: true}, image.id, false %>
+            </div>
+            <div>
+              <%= image_tag(image, width:150) %> <br>
+            </div>
+          </div>
         <% end %>
       <% end %>
       </div>

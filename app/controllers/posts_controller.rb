@@ -26,8 +26,12 @@ class PostsController < ApplicationController
   end
 
   def update
+    if params[:image_id].present?
+      image = post.images&find(image_id)
+      image.purge
+    end
     if @post.update(posts_params)
-      redirect_to @post
+      redirect_to action: :show
     else
       render 'edit'
     end
